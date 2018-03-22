@@ -72,9 +72,14 @@ public class CompromissoService {
     }
 
 
-    // Serviço para encontrar usuarios por perfil
-    public List<Compromisso> findCompromissoPorUsuario(final Long userId){
-        return repository.findCompromissoPorUsuario(userId);
+    // Serviço para listar compromissos por cliente
+    public List<Compromisso> findCompromissoPorUsuario(final Long idUsuario){
+        return repository.findCompromissoPorUsuario(idUsuario);
+    }
+
+    // Serviço para listar compromissos por equipe
+    public List<Compromisso> findCompromissoPorEquipe(final Long idEquipe){
+        return repository.findCompromissoPorEquipe(idEquipe);
     }
 
 }

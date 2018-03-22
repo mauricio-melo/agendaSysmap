@@ -1,7 +1,9 @@
 package br.com.sysmap.agendaSysmap.service;
 
 import br.com.sysmap.agendaSysmap.dto.UsuarioDTO;
+import br.com.sysmap.agendaSysmap.dto.response.UsuarioResponseDTO;
 import br.com.sysmap.agendaSysmap.exception.ResourceNotFoundException;
+import br.com.sysmap.agendaSysmap.model.Perfil;
 import br.com.sysmap.agendaSysmap.model.Usuario;
 import br.com.sysmap.agendaSysmap.repository.UsuarioRepository;
 import br.com.sysmap.agendaSysmap.translate.UsuarioTranslator;
@@ -69,4 +71,11 @@ public class UsuarioService {
     public List<Usuario> findAll() {
         return repository.findAll();
     }
+
+
+    // Serviço para encontrar usuarios por perfil
+    public List<Usuario> findUsuariosPorPerfil(final Perfil perfil){
+        return repository.findUsuariosPorPerfil(perfil);
+    }
+
 }

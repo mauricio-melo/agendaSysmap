@@ -105,5 +105,19 @@ public class CompromissoResource {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping(path = "/usuario/{userId}", produces = APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Lista todos os compromissos por usuario", response = CompromissoResponseDTO.class, responseContainer = "List")
+    public ResponseEntity<List<CompromissoResponseDTO>> findCompromissoPorUsuario(
+            @PathVariable final Long userId) {
+
+        //Buscando todos os recursos
+        final List<Compromisso> entityList = service.findCompromissoPorUsuario(userId);
+
+        //Traduzindo entity para response
+        final List<CompromissoResponseDTO> responseList = translator.toResponse(entityList);
+
+        return ResponseEntity.ok(responseList);
+    }
+
 
 }

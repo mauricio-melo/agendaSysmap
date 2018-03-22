@@ -1,9 +1,7 @@
 package br.com.sysmap.agendaSysmap.model;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Calendar;
@@ -21,8 +19,9 @@ public class Compromisso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@ManyToOne
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@MapsId("idUsuario")
 	private Usuario usuario;
 
 	//@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

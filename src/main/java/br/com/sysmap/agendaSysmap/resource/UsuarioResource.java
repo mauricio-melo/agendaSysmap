@@ -84,7 +84,7 @@ public class UsuarioResource {
     }
 
 
-    /*@GetMapping(produces = APPLICATION_JSON_VALUE)
+    @GetMapping(produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os usuarios", response = UsuarioResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<UsuarioResponseDTO>> list() {
 
@@ -96,7 +96,7 @@ public class UsuarioResource {
 
         //Retornando a responseEntity com o response com status ok
         return ResponseEntity.ok(responseList);
-    }/*/
+    }
 
 
     @DeleteMapping("{id}")
@@ -113,14 +113,13 @@ public class UsuarioResource {
     // --------------------------------------------------------------
 
 
-    @GetMapping(produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/perfil/{perfil}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os usuarios com determinado perfil", response = UsuarioResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<UsuarioResponseDTO>> findUsuariosPorPerfil(
-            @RequestParam(value="perfil") String perfil) {
+            @PathVariable final String perfil) {
 
         //Buscando todos os recursos
         final List<Usuario> entityList = service.findUsuariosPorPerfil(Perfil.fromCode(perfil));
-
 
         //Traduzindo entity para response
         final List<UsuarioResponseDTO> responseList = translator.toResponse(entityList);

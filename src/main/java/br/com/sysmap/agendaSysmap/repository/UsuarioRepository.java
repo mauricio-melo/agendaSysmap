@@ -10,11 +10,7 @@ import java.util.List;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-
-
-    //@Query(value = " select u from Usuario u " + " where u.perfil = :perfil" )
     @Query(value = "SELECT u from Usuario u WHERE u.perfil = :perfil")
     List<Usuario> findUsuariosPorPerfil(@Param("perfil") Perfil perfil);
-
 
 }

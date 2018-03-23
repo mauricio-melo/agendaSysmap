@@ -21,7 +21,7 @@ public class CompromissoResponseDTO {
     private Date inicio;
 
     @ApiModelProperty(notes = "Data e hora de termino do compromisso.", example = "2016-10-24 13:34:49", required = true, position = 3)
-    private Calendar termino;
+    private Date termino;
 
     @ApiModelProperty(notes = "Descrição do compromisso", example = "Reunião para alinhar o aporte financeiro do Itaú", required = true, position = 4)
     private String descricao;

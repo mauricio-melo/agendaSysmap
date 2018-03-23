@@ -24,12 +24,12 @@ public class CompromissoRequestDTO {
     private Long idUsuario;
 
     @NotNull(message = "Campo \"inicio\" precisa ser informado.")
-    @ApiModelProperty(notes = "Data e hora de inicio do compromisso.", example = "2016-10-24 11:34:49", required = true, position = 3)
+    @ApiModelProperty(notes = "Data e hora de inicio do compromisso.", example = "2016-10-24", required = true, position = 3)
     private Date inicio;
 
     @NotNull(message = "Campo \"temrino\" precisa ser informado.")
-    @ApiModelProperty(notes = "Data e hora de termino do compromisso.", example = "2016-10-24 13:34:49", required = true, position = 4)
-    private Calendar termino;
+    @ApiModelProperty(notes = "Data e hora de termino do compromisso.", example = "2016-10-24", required = true, position = 4)
+    private Date termino;
 
     @NotNull(message = "Campo \"descricao\" precisa ser informado.")
     @ApiModelProperty(notes = "Descrição do compromisso", example = "Reunião para alinhar o aporte financeiro do Itaú", required = true, position = 5)

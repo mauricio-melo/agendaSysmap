@@ -21,17 +21,16 @@ public class Compromisso {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("idUsuario")
 	private Usuario usuario;
 
 	//@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private Date inicio;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Calendar termino;
+	private Date termino;
 
 	@Column(nullable = false)
 	private String descricao;

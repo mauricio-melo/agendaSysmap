@@ -13,7 +13,7 @@ public class CompromissoDTO {
     private Long id;
     private Long idUsuario;
     private Date inicio;
-    private Calendar termino;
+    private Date termino;
     private String descricao;
     private String local;
 }

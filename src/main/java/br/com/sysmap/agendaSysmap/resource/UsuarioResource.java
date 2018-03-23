@@ -31,6 +31,7 @@ public class UsuarioResource {
     @Autowired
     private UsuarioTranslator translator;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Criação de um novo recurso usuario", responseReference = "Novo recurso criado.")
     public ResponseEntity<Void> create(@Valid @RequestBody UsuarioRequestDTO requestDTO) {
@@ -53,6 +54,7 @@ public class UsuarioResource {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Atualização de um recurso usuario", responseReference = "200 = Recurso atualizado com sucesso.")
     public ResponseEntity<Void> update(@Valid @RequestBody final UsuarioRequestDTO requestDTO) {
@@ -68,7 +70,7 @@ public class UsuarioResource {
     }
 
 
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Pesquisa em especifico de um recurso usuario", response = UsuarioResponseDTO.class)
     public ResponseEntity<UsuarioResponseDTO> findById(@PathVariable final Long id) {
@@ -84,6 +86,7 @@ public class UsuarioResource {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os usuarios", response = UsuarioResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<UsuarioResponseDTO>> list() {
@@ -99,6 +102,7 @@ public class UsuarioResource {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("{id}")
     @ApiOperation(value = "Delete de um recurso usuario", responseReference = "Recurso excluído.")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
@@ -113,6 +117,7 @@ public class UsuarioResource {
     // --------------------------------------------------------------
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/perfil/{perfil}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os usuarios com determinado perfil", response = UsuarioResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<UsuarioResponseDTO>> findUsuariosPorPerfil(

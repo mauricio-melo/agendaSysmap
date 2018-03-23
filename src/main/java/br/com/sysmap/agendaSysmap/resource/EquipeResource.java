@@ -31,6 +31,7 @@ public class EquipeResource {
     @Autowired
     private EquipeTranslator translator;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Criação de um novo recurso equipe", responseReference = "Novo recurso criado.")
     public ResponseEntity<Void> create(@Valid @RequestBody EquipeRequestDTO requestDTO) {
@@ -52,6 +53,7 @@ public class EquipeResource {
         return ResponseEntity.created(uri).build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping(path = "/{id}", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Atualização de um recurso equipe", responseReference = "200 = Recurso atualizado com sucesso.")
     public ResponseEntity<Void> update(@Valid @RequestBody final EquipeRequestDTO requestDTO) {
@@ -66,6 +68,7 @@ public class EquipeResource {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Pesquisa em especifico de um recurso equipe", response = EquipeResponseDTO.class)
     public ResponseEntity<EquipeResponseDTO> findById(@PathVariable final Long id) {
@@ -80,6 +83,7 @@ public class EquipeResource {
         return ResponseEntity.ok(responseDTO);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos as equipes", response = EquipeResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<EquipeResponseDTO>> list() {
@@ -94,6 +98,7 @@ public class EquipeResource {
         return ResponseEntity.ok(responseList);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("{id}")
     @ApiOperation(value = "Delete de um recurso equipe", responseReference = "Recurso excluído.")
     public ResponseEntity<Void> delete(@PathVariable Long id) {

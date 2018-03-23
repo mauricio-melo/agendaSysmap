@@ -31,6 +31,7 @@ public class CompromissoResource {
     private CompromissoTranslator translator;
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Criação de um novo recurso compromisso", responseReference = "Novo recurso criado.")
     public ResponseEntity<Void> create(@Valid @RequestBody CompromissoRequestDTO requestDTO) {
@@ -52,6 +53,7 @@ public class CompromissoResource {
         return ResponseEntity.created(uri).build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping(path = "/{id}", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Atualização de um recurso compromisso", responseReference = "200 = Recurso atualizado com sucesso.")
     public ResponseEntity<Void> update(@Valid @RequestBody final CompromissoRequestDTO requestDTO) {
@@ -66,6 +68,7 @@ public class CompromissoResource {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Pesquisa em especifico de um recurso compromisso", response = CompromissoResponseDTO.class)
     public ResponseEntity<CompromissoResponseDTO> findById(@PathVariable final Long id) {
@@ -80,6 +83,7 @@ public class CompromissoResource {
         return ResponseEntity.ok(responseDTO);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os compromissos", response = CompromissoResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<CompromissoResponseDTO>> list() {
@@ -94,6 +98,7 @@ public class CompromissoResource {
         return ResponseEntity.ok(responseList);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("{id}")
     @ApiOperation(value = "Delete de um recurso compromisso", responseReference = "Recurso excluído.")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
@@ -105,6 +110,7 @@ public class CompromissoResource {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/usuario/{idUsuario}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os compromissos por usuario", response = CompromissoResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<CompromissoResponseDTO>> findCompromissoPorUsuario(
@@ -119,6 +125,7 @@ public class CompromissoResource {
         return ResponseEntity.ok(responseList);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/equipe/{idEquipe}", produces = APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Lista todos os compromissos por equipe", response = CompromissoResponseDTO.class, responseContainer = "List")
     public ResponseEntity<List<CompromissoResponseDTO>> findCompromissoPorEquipe(

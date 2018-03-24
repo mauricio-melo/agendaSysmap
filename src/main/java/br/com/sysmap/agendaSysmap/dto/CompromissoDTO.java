@@ -12,6 +12,7 @@ public class CompromissoDTO {
 
     private Long id;
     private Long idUsuario;
+    private String nomeUsuario;
     private Date inicio;
     private Date termino;
     private String descricao;

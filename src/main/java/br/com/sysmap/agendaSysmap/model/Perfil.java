@@ -17,12 +17,18 @@ public enum Perfil {
 			case "desenvolvedor":
 				return Perfil.DESENVOLVEDOR;
 
+			case "DESENVOLVEDOR":
+				return Perfil.DESENVOLVEDOR;
+
 			case "lider":
 				return Perfil.LIDER;
 
+			case "LIDER":
+				return Perfil.LIDER;
+
 			default:
-				throw new IllegalArgumentException("Code [" + code
-						+ "] not supported.");
+				throw new IllegalArgumentException("Perfil [" + code
+						+ "] não suportado");
 		}
 	}
 

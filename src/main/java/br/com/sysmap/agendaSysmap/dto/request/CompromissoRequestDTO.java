@@ -14,7 +14,7 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompromissoRequestDTO {
+public class    CompromissoRequestDTO {
 
     @ApiModelProperty(notes = "ID do compromisso. ", example = "1", required = true, position = 1)
     private Long id;

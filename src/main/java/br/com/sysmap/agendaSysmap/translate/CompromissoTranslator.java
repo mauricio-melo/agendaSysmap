@@ -39,7 +39,7 @@ public class CompromissoTranslator {
         compromisso.setInicio(dto.getInicio());
         compromisso.setTermino(dto.getTermino());
         compromisso.setDescricao(dto.getDescricao());
-        compromisso.setLocal(dto.getDescricao());
+        compromisso.setLocal(dto.getLocal());
 
         return compromisso;
     }
@@ -49,12 +49,12 @@ public class CompromissoTranslator {
         return CompromissoResponseDTO.builder()
                 .id(compromisso.getId())
                 .idUsuario(compromisso.getUsuario().getId())
+                .nomeUsuario(compromisso.getUsuario().getNome())
                 .inicio(compromisso.getInicio())
                 .termino(compromisso.getTermino())
                 .descricao(compromisso.getDescricao())
                 .local(compromisso.getLocal())
                 .build();
-
     }
 
 

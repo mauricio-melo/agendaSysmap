@@ -23,7 +23,7 @@ public class UsuarioRequestDTO {
     private String nome;
 
     @NotNull(message = "Campo \"perfil\" precisa ser informado.")
-    @ApiModelProperty(notes = "Perfil do usuario.", example = "DESENVOLVEDOR", required = true, position = 3)
+    @ApiModelProperty(notes = "Perfil do usuario.", example = "desenvolvedor", required = true, position = 3)
     private Perfil perfil;
 
     @ApiModelProperty(notes = "ID da equipe que o usuario pertence.", required = true,  example = "1", position = 4)

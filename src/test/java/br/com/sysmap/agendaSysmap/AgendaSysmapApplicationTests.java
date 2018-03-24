@@ -1,24 +1,19 @@
 package br.com.sysmap.agendaSysmap;
 
-import br.com.sysmap.agendaSysmap.model.Compromisso;
-import br.com.sysmap.agendaSysmap.model.Equipe;
 import br.com.sysmap.agendaSysmap.model.Perfil;
 import br.com.sysmap.agendaSysmap.model.Usuario;
-import org.junit.Test;
+import br.com.sysmap.agendaSysmap.repository.UsuarioRepository;
+import br.com.sysmap.agendaSysmap.service.UsuarioService;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AgendaSysmapApplicationTests {
 
-	/*@Test
+    /*@Test
 	public void deveCriarUmUsuario() {
 		Usuario usuario = Usuario.builder()
 				.nome("Bruno Rolim")
